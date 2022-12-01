@@ -7,27 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   interval;
-  countDownValue: number;
+  countdownValue: number;
 
   constructor() {
-    this.countDownValue = 5;
+    this.countdownValue = 5;
   }
 
   ngOnInit() {
-    this.countDown();
+    this.countdown();
   }
 
-  countDown() {
+  countdown() {
     this.interval = setInterval(() => {
-      this.countDownValue--;
-      if (this.countDownValue === 0) {
+      this.countdownValue--;
+      if (this.countdownValue === 0) {
         clearInterval(this.interval);
       }
     }, 1000);
   }
 
   restart() {
-    this.countDownValue = 5;
-    this.countDown();
+    this.countdownValue = 5;
+    this.countdown();
   }
 }
